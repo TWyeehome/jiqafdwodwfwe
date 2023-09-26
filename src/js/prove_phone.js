@@ -319,7 +319,7 @@ const app = new Vue({
             };
             // 檢查信箱
             function validateEmail(email) {
-                var re = /\S+@\S+\.\S+/;
+                // var re = /\S+@\S+\.\S+/;
                 return re.test(email);
             };
             if (!validateEmail(this.email)) {
