@@ -4,8 +4,6 @@
 
 .Mainheader {
     color: rgba(13, 13, 16, 1);
-    padding-left: 1rem;
-    padding-right: 1rem;
     &.--fixed {
         z-index: 99999999999999;
         position: fixed;
@@ -49,8 +47,8 @@
     &__logo__logo svg {
         width: 100%;
     }
-    &__logo__txt {
-        font-family: Bevellier-Variable;
+    &__logo__txt { 
+        // font-family: Bevellier-Variable;
         // font-family: NewTitle-Variable;
         font-size: 13px;
         text-transform: uppercase;
@@ -91,7 +89,7 @@
             text-align: right;
             position: relative;
             // font-family: NewTitle-Variable;
-            font-family: Bevellier-Variable;
+            // font-family: Bevellier-Variable;
         }
         li.--active {
             font-family: "Manrope-SemiBold", "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto,

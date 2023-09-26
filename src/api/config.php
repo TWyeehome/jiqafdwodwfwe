@@ -7,10 +7,3 @@ switch ($_SERVER['SERVER_NAME']) {
     $test = false;
 };
 
-if ($test == true) {
-    // 測試
-
-} else {
-    // 正式
-
-};

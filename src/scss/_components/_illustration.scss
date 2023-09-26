@@ -16,7 +16,6 @@
     border-radius: 12px 12px 0px 0px;
     margin: 0 auto;
     margin-top: 100vh;
-    position: relative;
     background-size: cover;
     background-position: center;
     background-color: transparent;
@@ -95,7 +94,6 @@
         color: #ffffe3;
         line-height: 110%;
         text-align: center;
-        margin-bottom: 8px;
         background-color: transparent;
         margin-bottom: 24px;
         transition: all 0.3s;
@@ -126,7 +124,7 @@
         background-color: transparent;
         color: #ffffe3;
         text-align: center;
-        font-family: "ClashGrotesk-Medium";
+        // font-family: "ClashGrotesk-Medium";
         transition: all 0.3s;
         font-size: 16px;
         @media (min-width: 512px) {

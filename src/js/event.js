@@ -486,7 +486,7 @@ const app = new Vue({
                             app.ticketName = data.content[index].ticket_code;
                             // console.log(response.data);
                             document.querySelector('.qr_box').innerHTML = '';
-                            new QRCode(document.querySelector('.qr_box'), {
+                            QRCode(document.querySelector('.qr_box'), {
                                 // member_id, ticket_id
                                 // location.href + 
                                 text: 't=' + data.content[index].ticket_code,

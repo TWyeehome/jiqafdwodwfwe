@@ -393,7 +393,7 @@ switch ($_POST['type']) {
                 $post = [
                     'from' => 'info@amping.io',
                     'fromName' => 'AMPING',
-                    'apikey' => '',
+                    'apikey' => 'none',
                     'subject' => "領取驗證碼 - 《AI靈感大師：澳洲3D光影觸動樂園》",
                     'to' => $_POST['email'],
                     // 'msgBcc' => 'celiahsu@fansi.me',
@@ -544,7 +544,7 @@ switch ($_POST['type']) {
                     $post = [
                         'from' => 'info@amping.io',
                         'fromName' => 'AMPING',
-                        'apikey' => '',
+                        'apikey' => 'none',
                         'subject' => "領取驗證碼 - 《AI靈感大師：澳洲3D光影觸動樂園》",
                         'to' => $_POST['email'],
                         // 'msgBcc' => 'celiahsu@fansi.me',
@@ -622,8 +622,8 @@ switch ($_POST['type']) {
                 try {
                     $post = array(
                         'from' => 'info@amping.io',
-                        'fromName' => 'AMPING',
-                        'apikey' => '',
+                        'fromName' => 'AMPING', 
+                        'apikey' => 'none',
                         'subject' => "領取驗證碼 - 《AI靈感大師：澳洲3D光影觸動樂園》",
                         'to' => $_POST['email'],
                         // 'msgBcc' => 'celiahsu@fansi.me',
