@@ -1,0 +1,47 @@
+input[type="radio"]:checked + label {
+    background: linear-gradient(90deg, #dfe9f3 0%, #fff 100%);
+    color: #000;
+    border: 2px solid #000;
+}
+
+.convert {
+    &_conitaner {
+        padding: 0 10px;
+    }
+    &_btn {
+        cursor: pointer;
+        width: 100%;
+        text-align: center;
+        color: gray;
+        border-radius: 6px;
+        border: 2px solid gray;
+        background: none;
+        margin-bottom: 8px;
+        h3 {
+            font-size: 26px;
+            font-weight: 500;
+            line-height: 38px;
+            letter-spacing: 0em;
+            padding: 16px 0;
+        }
+        p {
+            font-size: 12px;
+            font-weight: 500;
+            line-height: 15px;
+            letter-spacing: 0em;
+            padding-bottom: 16px;
+            margin: 0;
+        }
+    }
+    &_download {
+        font-family: 'Manrope';
+        font-size: 12px;
+        font-weight: 500;
+        line-height: 12px;
+        letter-spacing: 0em;
+        text-align: center;
+        color: rgba(13, 13, 16, 1);
+        margin-top: 20px;
+        margin-bottom: 100px;
+    }
+}

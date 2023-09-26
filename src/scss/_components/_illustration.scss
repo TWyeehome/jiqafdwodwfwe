@@ -1,0 +1,145 @@
+.MainvisionSecond {
+    position: relative;
+}
+
+// 首頁插圖
+.illustration {
+    position: relative;
+    width: calc(100% - 32px);
+    @media (min-width: 512px) {
+        width: calc(100% - 60px);
+    }
+    @media (min-width: 1024px) {
+        width: calc(100% - 120px);
+    }
+    height: 100vh;
+    border-radius: 12px 12px 0px 0px;
+    margin: 0 auto;
+    margin-top: 100vh;
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-color: transparent;
+    transition: all 0.5s;
+    max-width: 100%;
+    // 下滑提示線
+    &__scroll {
+        position: relative;
+        width: 100%;
+        height: 226px;
+    }
+    &__line {
+        overflow: hidden;
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: -226px;
+        bottom: 0;
+        margin: auto;
+        width: 1px;
+        height: 100%;
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: $primary;
+            animation-name: scrollLine;
+            animation-duration: 3.2s;
+            animation-timing-function: cubic-bezier(0.77, 0, 0.175, 1);
+            animation-iteration-count: infinite;
+        }
+    }
+    @keyframes scrollLine {
+        0% {
+            transform: translateY(-100%);
+        }
+        5% {
+            transform: translateY(-100%);
+        }
+        45% {
+            transform: translateY(0);
+        }
+        55% {
+            transform: translateY(0);
+        }
+        95% {
+            transform: translateY(100%);
+        }
+        100% {
+            transform: translateY(100%);
+        }
+    }
+    &__content {
+        width: 100%;
+        max-width: 300px;
+        @media (min-width: 512px) {
+            max-width: 380px;
+        }
+        @media (min-width: 1024px) {
+            max-width: 600px;
+        }
+        @media (min-width: 1400px) {
+            max-width: 906px;
+        }
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: 0 auto;
+        transform: translate(-50%, -50%);
+        background-color: transparent;
+    }
+    &__title {
+        color: #ffffe3;
+        line-height: 110%;
+        text-align: center;
+        margin-bottom: 8px;
+        background-color: transparent;
+        margin-bottom: 24px;
+        transition: all 0.3s;
+        font-size: 16px;
+        @media (min-width: 512px) {
+            font-size: 18px;
+        }
+        @media (min-width: 1024px) {
+            font-size: 25px;
+        }
+        @media (min-width: 1400px) {
+            font-size: 40px;
+        }
+        &--zoom {
+            font-size: 32px;
+            @media (min-width: 512px) {
+                font-size: 36px;
+            }
+            @media (min-width: 1024px) {
+                font-size: 50px;
+            }
+            @media (min-width: 1400px) {
+                font-size: 80px;
+            }
+        }
+    }
+    &__subtitle {
+        background-color: transparent;
+        color: #ffffe3;
+        text-align: center;
+        font-family: "ClashGrotesk-Medium";
+        transition: all 0.3s;
+        font-size: 16px;
+        @media (min-width: 512px) {
+            font-size: 18px;
+        }
+        @media (min-width: 1024px) {
+            font-size: 28px;
+        }
+        @media (min-width: 1400px) {
+            font-size: 36px;
+        }
+    }
+    &--zoom {
+        width: calc(100%);
+    }
+}

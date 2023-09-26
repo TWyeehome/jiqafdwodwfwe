@@ -1,0 +1,80 @@
+.Mainfooter {
+    &__loop {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        overflow: hidden;
+        height: 90vh;
+        max-height: 720px;
+    }
+    &__loop .JS_LOOP .loop__title .loop__text {
+        text-transform: uppercase;
+    }
+
+    &__brand {
+        width: 100%;
+        max-width: 120px;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 120px;
+
+        img {
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            mix-blend-mode: luminosity;
+            margin-bottom: 1rem;
+            opacity: 0.5;
+        }
+        img:first-child {
+            max-width: 100px;
+        }
+    }
+    &__copyright {
+        width: 100%;
+        max-width: 146px;
+        margin-left: auto;
+        margin-right: auto;
+        padding-bottom: map-get($spacers, 5);
+        font-size: $font-size-xs;
+        color: $gray-100;
+        text-align: center;
+        opacity: 0.3;
+    }
+}
+
+// ticket
+.footer {
+    padding-top: 80px;
+    padding-bottom: 96px;
+    margin: 0 auto;
+    &__content {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 100%;
+        text-align: center;
+        color: #565765;
+        margin-bottom: 4px;
+        &--light {
+            color: rgba(255, 255, 255, 0.5);
+            margin-bottom: 6px;
+        }
+
+        &--gap {
+            margin-bottom: 16px;
+        }
+    }
+    &__host {
+        font-family: "Manrope";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 12px;
+        line-height: 130%;
+        text-align: center;
+        color: #565765;
+        padding-top: 44px;
+    }
+}

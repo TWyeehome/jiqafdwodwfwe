@@ -1,0 +1,65 @@
+.video {
+    height: 400px;
+    &__box {
+        position: relative;
+        width: 100%;
+        min-height: 300px;
+        height: 100%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: $gray-900;
+    }
+    &__fade {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 1;
+        cursor: pointer;
+        /* pointer-events: auto; */
+        /* transition: 1s; */
+        transition: $transition-primary;
+        /* 圖片 */
+        overflow: hidden;
+        background-size: 100% 100%;
+        background-position: center;
+        background-repeat: no-repeat;
+
+        &--hide {
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
+    &__fade__btn {
+        position: absolute;
+        left: 0; right: 0; top: 0; bottom: 0;
+        margin: auto;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 80px; height: 80px;
+        text-transform: uppercase;
+        font-size: $font-size-sm;
+        color: $gray-900;
+        background-color: $gray-100;
+        // mix-blend-mode: difference;
+        border-radius: 100%;
+        transform: translate(0, 10%);
+        animation: floatbtn 7s ease-in-out infinite;
+    }
+    &__play {
+        width: 100%;
+        aspect-ratio: 10 / 6;
+    }
+    &__play iframe {
+        width: 100%; height: 100%;
+    }
+}
+@keyframes floatbtn {
+    50% {
+        transform: translate(5%, -12%);
+    }
+}
+

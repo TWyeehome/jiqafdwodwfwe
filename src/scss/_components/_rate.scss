@@ -1,0 +1,18 @@
+.rate {
+    background-color: black;
+    width: 100%;
+    height: 20px;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    z-index: 9998;
+    &--load {
+        background-color: green;
+        width: 0%;
+        height: 20px;
+        position: fixed;
+        bottom: 0;
+        left: 0;
+        z-index: 9999;
+    }
+}

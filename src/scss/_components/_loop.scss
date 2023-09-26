@@ -1,0 +1,87 @@
+// 跑馬燈
+.loop {
+    width: 100%;
+    overflow: hidden;
+    // padding: 30px 0;
+    &--about {
+        background-size: cover;
+        background-position: center;
+        background-color: transparent;
+    }
+    &__container {
+        background-repeat: no-repeat;
+        background-size: cover;
+        width: 100%;
+        overflow: hidden;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    &__title {
+        display: flex;
+    }
+    &__text {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        line-height: 100%;
+        // -webkit-text-fill-color: #ffffe3;
+        // -webkit-text-stroke-color: #f1981e;
+        // -webkit-text-stroke-width: 1px;
+        white-space: nowrap;
+        // text-transform: uppercase;
+        animation: scroll__1 20s linear infinite;
+        &:nth-child(2) {
+            animation: scroll__2 20s linear infinite;
+            animation-delay: -10s;
+        }
+        &--right {
+            //
+            animation: scroll__3 20s linear infinite;
+            &:nth-child(2) {
+                animation: scroll__4 20s linear infinite;
+                animation-delay: -10s;
+            }
+        }
+    }
+    &__img {
+        width: 80px;
+        height: 40px;
+        margin: 0 16px;
+    }
+    // left
+    @keyframes scroll__1 {
+        from {
+            transform: translateX(100%);
+        }
+        to {
+            transform: translateX(-100%);
+        }
+    }
+    @keyframes scroll__2 {
+        from {
+            transform: translateX(0%);
+        }
+        to {
+            transform: translateX(-200%);
+        }
+    }
+    // right
+    @keyframes scroll__3 {
+        from {
+            transform: translateX(-100%);
+        }
+        to {
+            transform: translateX(100%);
+        }
+    }
+    @keyframes scroll__4 {
+        from {
+            transform: translateX(-200%);
+        }
+        to {
+            transform: translateX(0%);
+        }
+    }
+}

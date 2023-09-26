@@ -1,0 +1,340 @@
+// ================================================
+// 預設參數
+// ================================================
+
+body {
+    touch-action: manipulation;
+}
+
+input:focus {
+    outline: 0;
+}
+
+button:focus {
+    outline: 0;
+}
+
+$white: #ffffff !default;
+$gray-100: #d0d0d0 !default;
+$gray-800: #0e0c10 !default;
+$gray-900: #040305 !default;
+$black: #000000 !default;
+
+$blue: #0d6efd !default;
+$indigo: #6610f2 !default;
+$purple: #6f42c1 !default;
+$pink: #d63384 !default;
+$red: #dc3545 !default;
+$orange: #fd7e14 !default;
+$yellow: #ffc107 !default;
+$green: #35d0ba !default;
+$teal: #20c997 !default;
+$cyan: #0dcaf0 !default;
+
+$primary: $orange !default;
+
+// 文字顏色 | Text Color
+$color__title: #111420;
+$color__subtitle: rgba(17, 20, 32, 0.87);
+$color__notice: rgba(17, 20, 32, 0.6);
+$color__disable: rgba(17, 20, 32, 0.38);
+$color__button: #ffffff;
+
+// 預設字體
+// 使用方式：客製化字體請在此變更，將套用到所有
+$font-family-main: "Manrope-Medium", "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji" !default;
+$font-family-IKURS: "Lightningvolt", "Noto Sans TC", system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+    Arial, "Noto Sans", "Liberation Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol",
+    "Noto Color Emoji" !default;
+$font-size-base: 1rem !default;
+$font-size-xs: $font-size-base * 0.75 !default;
+$font-size-sm: $font-size-base * 0.875 !default;
+
+$h1-font-size: $font-size-base * 2.5 !default;
+$h2-font-size: $font-size-base * 1.625 !default;
+$h3-font-size: $font-size-base * 1.325 !default;
+
+$disply1-font-size: $font-size-base * 3.125 !default;
+
+// 圓角
+$rounded-sm: 4px;
+$rounded-mm: 12px;
+$rounded-xl: 44px;
+
+// 陰影
+$shadow--sm: 0 0.125rem 0.2rem rgba(0, 0, 0, 0.08);
+// $shadow--md: 0.25rem 0.25rem 1.25rem rgba(0, 0, 0, 0.1);
+$shadow--md: 1rem 1rem 2rem rgba($black, 0.35);
+
+// KIRE 區塊間距
+$spacer: 1rem !default;
+$spacers: (
+    0: 0,
+    1: $spacer * 0.25,
+    2: $spacer * 0.5,
+    3: $spacer,
+    4: $spacer * 1.5,
+    5: $spacer * 5,
+) !default;
+
+// ================================================
+// 圖層 參數
+// 使用方式：z-index:  map-get($zindex, LayoutMobileArea);
+// ================================================
+
+$zindex: (
+    background: -1,
+    Default: 1021,
+    LayoutMobileArea: 1027,
+    LayoutTrackMode: 1028,
+    LayoutTrackTab: 1029,
+    Mainheaderfixed: 1030,
+    LayoutPassword: 1031,
+    Layout__KIREindex: 1032,
+);
+
+// ================================================
+// 效果
+// ================================================
+
+$transition-primary: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+@keyframes float {
+    50% {
+        transform: translate(-34%, -22%);
+    }
+}
+
+// ================================================
+// 基本設定
+// ================================================
+
+// 隱藏滾軸
+::-webkit-scrollbar {
+    display: none;
+}
+
+// 反白主題色
+/*html ::selection {
+    background: red;
+    color: red;
+}*/
+
+html,
+body {
+    font-family: $font-family-main;
+    // color: $gray-100;
+    color: #0d0d10;
+    background-color: rgb(35, 24, 21);
+    max-width: 100%;
+}
+
+a {
+    color: $gray-100;
+    display: block;
+}
+
+img {
+    display: block;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    font-weight: 500;
+    margin-bottom: 0;
+}
+
+p {
+    line-height: 130%;
+}
+
+select {
+    cursor: pointer;
+    -moz-appearance: none;
+    -webkit-appearance: none;
+}
+
+select::-ms-expand {
+    display: none;
+}
+
+ul,
+ol {
+    padding: 0;
+    list-style-type: none;
+    margin-bottom: 0;
+}
+
+input[type="date"]::-webkit-inner-spin-button,
+input[type="date"]::-webkit-calendar-picker-indicator {
+    display: none;
+    -webkit-appearance: none;
+}
+
+input {
+    position: relative;
+    overflow: hidden;
+}
+
+input::-webkit-calendar-picker-indicator {
+    display: block;
+    top: 0;
+    left: 0;
+    position: absolute;
+    transform: scale(12);
+}
+
+body.language--cn {
+    p {
+        font-weight: 400;
+        line-height: 165%;
+    }
+}
+
+// ================================================
+// Layout
+// ================================================
+
+.Layout {
+    // KIRE-CLASSIC 行動優先模板
+    &.--KIRE__wrapper {
+        width: 100%;
+        max-width: 1108px;
+        margin: 0 auto;
+        overflow: hidden;
+        position: relative;
+        @media (min-width: 605px) {
+            padding-left: map-get($spacers, 5);
+            padding-right: map-get($spacers, 5);
+        }
+    }
+    &.--KIRE__wrapper &__DesktopArea {
+        display: none;
+        position: fixed;
+        top: calc(50% - 242px);
+        aspect-ratio: 400 / 513;
+        // background-color: $gray-900;
+
+        @media (min-width: 900px) {
+            display: block;
+            width: 300px;
+        }
+        @media (min-width: 1024px) {
+            width: 400px;
+            height: 513px;
+        }
+    }
+    &.--KIRE__wrapper &__MobileArea {
+        // width: min(100%, 23.435rem);
+        width: 100%;
+        max-width: 100%;
+        margin: 0 auto 0 auto;
+        // background-color: $gray-900;
+        background-color: white;
+        position: relative;
+        z-index: map-get($zindex, LayoutMobileArea);
+        @media (min-width: 380px) {
+            min-width: 320px;
+        }
+        @media (min-width: 605px) {
+            max-width: 23.435rem;
+            min-width: 390px;
+            margin: 60px auto 60px auto;
+        }
+        @media (min-width: 900px) {
+            float: right;
+            margin: 60px 0 60px 0;
+        }
+    }
+
+    &.--KIRE__wrapper &__container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+
+    &__container {
+        width: 100%;
+        margin: auto;
+        max-width: 100%;
+        padding: 0 30px;
+
+        @media (min-width: 512px) {
+        }
+
+        @media (min-width: 768px) {
+            max-width: 880px;
+            padding: 0 30px;
+        }
+        @media (min-width: 1024px) {
+            max-width: 980px;
+            padding: 0 60px;
+        }
+        @media (min-width: 1400px) {
+            max-width: 1280px;
+            padding: 0 60px;
+        }
+    }
+}
+
+.bg-light {
+    background-color: $white;
+}
+
+.bg-dark {
+    background-color: $black;
+}
+
+.SHB {
+    overflow: hidden;
+    display: flex;
+    height: 18px;
+    font-size: $font-size-xs;
+
+    &__txt {
+        display: flex;
+        align-items: center;
+        height: 18px;
+    }
+    &__LOGO {
+        position: relative;
+        width: 36px;
+        height: 36px;
+        padding: 0 2px;
+        transform: translateY(0);
+        transition: $transition-primary;
+        // background-color: $red;
+    }
+    &__LOGO_icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 100%;
+        height: 18px;
+    }
+    &__LOGO_icon svg {
+        display: block;
+        width: 18.2px;
+        height: 14px;
+        aspect-ratio: 440 / 300;
+    }
+
+    &:hover &__LOGO {
+        transform: translateY(-18px);
+    }
+}
+
+// 文字階層 | Scale
+$title: 16px;
+$subtitle: 13px;
+$body: 16px;
+$capation: 13px;
+$small: 12px;
+$button-sm: 12px;
+$button-md: 14px;
+$button-lg: 16px;
