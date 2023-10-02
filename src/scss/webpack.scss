@@ -2,7 +2,7 @@
 @import "./_plugins/_bootstrap.scss";
 
 // _utilities
-// @import "./_utilities/_font.scss"; // 共用字型
+@import "./_utilities/_font.scss"; // 共用字型
 @import "./_utilities/_design_system.scss"; // CSS reset
 
 // _components
@@ -854,7 +854,7 @@ body.--TrackTagActiveClick {
 
     // 上觸發
     &__body li.--btm {
-        box-pack: end;
+        // box-pack: end;
         justify-content: flex-end;
     }
     &__body__liLoop .JS__LOOP.--btm {
@@ -1148,7 +1148,7 @@ body.--TrackTagActiveClick {
 }
 
 .cross {
-    margin: 100%;
+    // margin: 100%;
     display: block;
     margin: -1px auto;
 }

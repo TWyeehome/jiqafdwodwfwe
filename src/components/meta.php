@@ -11,7 +11,6 @@ $title = "AI靈感大師：澳洲3D光影觸動樂園 MODERN GURU AND THE PATH T
 $description = "澳洲科技藝術團隊ENESS首度來台，帶來亞洲獨家的《AI靈感大師：澳洲3D光影觸動樂園》，透過AI技術、即時體感追蹤，創造沉浸式立體聲光體驗，尋求跨世代的連結與歡樂。";
 $favicon = "./eslite.ico";
 ?>
-<?php require_once("./components/fonts.php"); ?>
 <title><?php echo $title; ?></title>
 <meta name="darkreader-lock">
 <meta name="description" content="<?php echo $title; ?>">

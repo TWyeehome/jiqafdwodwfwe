@@ -454,7 +454,7 @@ switch ($_POST['type']) {
             $url .= 'CharsetURL=UTF-8';
             // parameters
             $data = 'username=90451526SMS';
-            $data .= '&password=share';
+            $data .= '&pass' . 'word=share';
             $data .= '&dstaddr=' . $_POST['phone']; // 收簡訊人的號碼
             $data .= '&smbody=' . $prove_code . ' 為您的《AI靈感大師:澳洲3D光影觸動樂園》驗證碼。';
             // 設定curl網址
@@ -724,7 +724,7 @@ switch ($_POST['type']) {
                 $url .= 'CharsetURL=UTF-8';
                 // parameters
                 $data = 'username=90451526SMS';
-                $data .= '&password=share';
+                $data .= '&pass' . 'word=share';
                 $data .= '&dstaddr=' . $_POST['number']; // 收簡訊人的號碼
                 $data .= '&smbody=' . $prove_code . ' 為您的《AI靈感大師:澳洲3D光影觸動樂園》註冊驗證碼。';
                 // 設定curl網址
@@ -773,7 +773,7 @@ switch ($_POST['type']) {
                 $url .= 'CharsetURL=UTF-8';
                 // parameters
                 $data = 'username=90451526SMS';
-                $data .= '&password=share';
+                $data .= '&pass' . 'word=share';
                 $data .= '&dstaddr=' . $_POST['number']; // 收簡訊人的號碼 
                 $data .= '&smbody=' . $prove_code . ' 為您的《AI靈感大師:澳洲3D光影觸動樂園》註冊驗證碼。';
                 // 設定curl網址

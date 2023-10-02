@@ -1,61 +1,61 @@
-@font-face {
+@font-face { 
     font-family: manrope;
     font-style: normal;
     font-weight: 400;
-    src: local("Manrope"), url(./../font/manrope-regular.woff) format("woff");
+    src: local("Manrope"), url(../font/manrope-regular.woff) format("woff");
 }
 
 @font-face {
     font-family: manrope;
     font-style: normal;
     font-weight: 100;
-    src: local("Manrope"), url(./../font/manrope-thin.woff) format("woff");
+    src: local("Manrope"), url(../font/manrope-thin.woff) format("woff");
 }
 
 @font-face {
     font-family: manrope;
     font-style: normal;
     font-weight: 300;
-    src: local("Manrope"), url(./../font/manrope-light.woff) format("woff");
+    src: local("Manrope"), url(../font/manrope-light.woff) format("woff");
 }
 
 @font-face {
     font-family: manrope;
     font-style: normal;
     font-weight: 500;
-    src: local("Manrope"), url(./../font/manrope-medium.woff) format("woff");
+    src: local("Manrope"), url(../font/manrope-medium.woff) format("woff");
 }
 
 @font-face {
     font-family: manrope;
     font-style: normal;
     font-weight: 600;
-    src: local("Manrope"), url(./../font/manrope-semibold.woff) format("woff");
+    src: local("Manrope"), url(../font/manrope-semibold.woff) format("woff");
 }
 
 @font-face {
     font-family: manrope;
     font-style: normal;
     font-weight: 700;
-    src: local("Manrope"), url(./../font/manrope-bold.woff) format("woff");
+    src: local("Manrope"), url(../font/manrope-bold.woff) format("woff"); 
 }
 
 /**
- * @license
- *
- * Font Family: New Title
- * Designed by: Julie Soudanne, Jérémie Hornus
- * URL: https://www.fontshare.com/fonts/new-title
- * © 2023 Indian Type Foundry
- *
- * Font Styles:
- * New Title Variable(Variable font)
- * New Title Extralight
- * New Title Light
- * New Title Regular
- * New Title Medium
- * New Title Bold
- *
+* @license
+*
+* Font Family: New Title
+* Designed by: Julie Soudanne, Jérémie Hornus
+* URL: https://www.fontshare.com/fonts/new-title
+* © 2023 Indian Type Foundry
+*
+* Font Styles:
+* New Title Variable(Variable font)
+* New Title Extralight
+* New Title Light
+* New Title Regular
+* New Title Medium
+* New Title Bold
+*
 */
 
 /**
@@ -68,7 +68,7 @@
 * 'wght' (range from 200.0 to 700.0)
 
 */
-@font-face {
+@font-face { 
     font-family: "NewTitle-Variable";
     src: url("../font/NewTitle-Variable.woff2") format("woff2"), url("../font/NewTitle-Variable.woff") format("woff"),
         url("../font/NewTitle-Variable.ttf") format("truetype");
@@ -122,34 +122,35 @@
     font-display: swap;
     font-style: normal;
 }
+
 /**
- * @license
- *
- * Font Family: Bevellier
- * Designed by: Arya Purohit, Barbara Bigosinska
- * URL: https://www.fontshare.com/fonts/bevellier
- * © 2023 Indian Type Foundry
- *
- * Font Styles:
- * Bevellier Variable(Variable font)
- * Bevellier Variable Italic(Variable font)
- * Bevellier Thin
- * Bevellier Thin Italic
- * Bevellier Extralight
- * Bevellier Extralight Italic
- * Bevellier Light
- * Bevellier Light Italic
- * Bevellier Regular
- * Bevellier Italic
- * Bevellier Medium
- * Bevellier Medium Italic
- * Bevellier Semibold
- * Bevellier Semibold Italic
- * Bevellier Bold
- * Bevellier Bold Italic
- * Bevellier Black
- * Bevellier Black Italic
- *
+* @license
+*
+* Font Family: Bevellier
+* Designed by: Arya Purohit, Barbara Bigosinska
+* URL: https://www.fontshare.com/fonts/bevellier
+* © 2023 Indian Type Foundry
+*
+* Font Styles:
+* Bevellier Variable(Variable font)
+* Bevellier Variable Italic(Variable font)
+* Bevellier Thin
+* Bevellier Thin Italic
+* Bevellier Extralight
+* Bevellier Extralight Italic
+* Bevellier Light
+* Bevellier Light Italic
+* Bevellier Regular
+* Bevellier Italic
+* Bevellier Medium
+* Bevellier Medium Italic
+* Bevellier Semibold
+* Bevellier Semibold Italic
+* Bevellier Bold
+* Bevellier Bold Italic
+* Bevellier Black
+* Bevellier Black Italic
+*
 */
 
 /**
@@ -174,15 +175,15 @@
 }
 
 /**
-  * This is a variable font
-  * You can controll variable axes as shown below:
-  * font-variation-settings: 'wght' 100.0;
-  *
-  * available axes:
-  
-  * 'wght' (range from 100.0 to 900.0)
-  
-  */
+* This is a variable font
+* You can controll variable axes as shown below:
+* font-variation-settings: 'wght' 100.0;
+*
+* available axes:
+
+* 'wght' (range from 100.0 to 900.0)
+
+*/
 
 @font-face {
     font-family: "Bevellier-VariableItalic";
@@ -328,7 +329,7 @@
     font-style: italic;
 }
 
-@font-face { 
+@font-face {
     font-family: "Bevellier-Black";
     src: url("../font/Bevellier-Black.woff2") format("woff2"), url("../font/Bevellier-Black.woff") format("woff"),
         url("../font/Bevellier-Black.ttf") format("truetype");
