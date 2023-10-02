@@ -286,10 +286,14 @@ const app = new Vue({
                         let couponCode = '';
                         if (urlCoupon) { couponCode = '?coupon=' + urlCoupon; };
                         // 註冊完成
-                        if (data.register) { return location.replace('./index.php' + couponCode); };
-                        // 註冊未完成
-                        this.register = true;
-                        this.sendDefault();
+                        if (data.register == 'true') {
+                            location.replace('./index.php' + couponCode);
+                            return
+                        } else {
+                            // 註冊未完成
+                            this.register = true;
+                            this.sendDefault();
+                        };
                     } else {
                         this.proveCode = '';
                         this.sendDefault(data.message);
@@ -319,7 +323,7 @@ const app = new Vue({
             };
             // 檢查信箱
             function validateEmail(email) {
-                // var re = /\S+@\S+\.\S+/;
+                var re = /\S+@\S+\.\S+/;
                 return re.test(email);
             };
             if (!validateEmail(this.email)) {

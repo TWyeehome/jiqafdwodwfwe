@@ -133,9 +133,9 @@ switch ($_POST['type']) {
             // 驗證成功
             $db->query("UPDATE attend SET email_pass='" . 'true' . "' WHERE email='" . $_POST['email'] . "'");
             // 未註冊
-            if ($row['username'] == '' or $row['email'] == '') {
+            if ($row['phone_number'] == '') {
                 $json = [
-                    'register' => false,
+                    'register' => 'false',
                     'result' => 'success',
                     'message' => '驗證成功，但尚未註冊完成'
                 ];
@@ -144,7 +144,7 @@ switch ($_POST['type']) {
             // 已註冊
             setcookie('member_code', $row['member_code'], time() + 8640000, '/');
             $json = [
-                'register' => true,
+                'register' => 'true',
                 'result' => 'success',
                 'message' => '驗證成功'
             ];
@@ -176,10 +176,10 @@ switch ($_POST['type']) {
             // 驗證成功
             $db->query("UPDATE attend SET sms_pass='" . 'true' . "' WHERE phone_number='" . $_POST['number'] . "'");
             // 未註冊
-            if ($row['username'] == '' or $row['email'] == '') {
+            if ($row['email'] == '') {
                 $db->close();
                 $json = [
-                    'register' => false,
+                    'register' => 'false',
                     'result' => 'success',
                     'message' => '驗證成功，但尚未註冊完成'
                 ];
@@ -188,7 +188,7 @@ switch ($_POST['type']) {
             // 已註冊
             setcookie('member_code', $row['member_code'], time() + 8640000, '/');
             // output API
-            $json = ['register' => true, 'result' => 'success', 'message' => '驗證成功'];
+            $json = ['register' => 'true', 'result' => 'success', 'message' => '驗證成功'];
             $db->close();
             exit(json_encode($json));
         };
@@ -203,7 +203,7 @@ switch ($_POST['type']) {
             setcookie('visited', 'true', time() + (300), '/'); // cookie 存活 5 分鐘
         };
         //
-        $result = $db->query("SELECT id, member_code, qr_prove, username, phone_number, eslite_code FROM attend WHERE 
+        $result = $db->query("SELECT id, member_code, qr_prove, eslite_code FROM attend WHERE 
         member_code='" . $_COOKIE['member_code'] . "' AND (sms_pass='" . 'true' . "' OR email_pass='" . 'true' . "')");
         // 會員不存在
         if (!$result->num_rows) {
@@ -261,8 +261,7 @@ switch ($_POST['type']) {
             'email_pass' => $row['email_pass'],
             'eslite_code' => $row['eslite_code'], // 誠品會員卡號
             'eslite_update' => $row['eslite_update'], // 誠品會員卡號
-            'result' => 'success',
-            'message' => '登入過'
+            'result' => 'success' // 登入過
         ];
         exit(json_encode($json));
         break;
@@ -370,7 +369,10 @@ switch ($_POST['type']) {
             $db->query("UPDATE attend SET eslite_code='" . $_POST['esliteCode'] . "', eslite_update='" . '1' . "' WHERE member_code='" . $_COOKIE['member_code'] . "'");
         };
         // output API
-        $json = ['result' => 'success',   'message' => '成功更新'];
+        $json = [
+            'result' => 'success', 
+            'message' => '成功更新'
+        ];
         exit(json_encode($json));
         break;
     case 'send_code':
@@ -393,7 +395,7 @@ switch ($_POST['type']) {
                 $post = [
                     'from' => 'info@amping.io',
                     'fromName' => 'AMPING',
-                    'apikey' => 'none',
+                    'apikey' => 'CC9B93B4F674BDDFB44AF903E607B86D0C0E110B07B1756448E915DACDF61B5043740BD2B3FCB948ED091F84CA7AF1BC',
                     'subject' => "領取驗證碼 - 《AI靈感大師：澳洲3D光影觸動樂園》",
                     'to' => $_POST['email'],
                     // 'msgBcc' => 'celiahsu@fansi.me',
@@ -452,7 +454,7 @@ switch ($_POST['type']) {
             $url .= 'CharsetURL=UTF-8';
             // parameters
             $data = 'username=90451526SMS';
-            $data .= '&no';
+            $data .= '&password=share';
             $data .= '&dstaddr=' . $_POST['phone']; // 收簡訊人的號碼
             $data .= '&smbody=' . $prove_code . ' 為您的《AI靈感大師:澳洲3D光影觸動樂園》驗證碼。';
             // 設定curl網址
@@ -544,7 +546,7 @@ switch ($_POST['type']) {
                     $post = [
                         'from' => 'info@amping.io',
                         'fromName' => 'AMPING',
-                        'apikey' => 'none',
+                        'apikey' => 'CC9B93B4F674BDDFB44AF903E607B86D0C0E110B07B1756448E915DACDF61B5043740BD2B3FCB948ED091F84CA7AF1BC',
                         'subject' => "領取驗證碼 - 《AI靈感大師：澳洲3D光影觸動樂園》",
                         'to' => $_POST['email'],
                         // 'msgBcc' => 'celiahsu@fansi.me',
@@ -622,8 +624,8 @@ switch ($_POST['type']) {
                 try {
                     $post = array(
                         'from' => 'info@amping.io',
-                        'fromName' => 'AMPING', 
-                        'apikey' => 'none',
+                        'fromName' => 'AMPING',
+                        'apikey' => 'CC9B93B4F674BDDFB44AF903E607B86D0C0E110B07B1756448E915DACDF61B5043740BD2B3FCB948ED091F84CA7AF1BC',
                         'subject' => "領取驗證碼 - 《AI靈感大師：澳洲3D光影觸動樂園》",
                         'to' => $_POST['email'],
                         // 'msgBcc' => 'celiahsu@fansi.me',
@@ -722,7 +724,7 @@ switch ($_POST['type']) {
                 $url .= 'CharsetURL=UTF-8';
                 // parameters
                 $data = 'username=90451526SMS';
-                $data .= '&no'; 
+                $data .= '&password=share';
                 $data .= '&dstaddr=' . $_POST['number']; // 收簡訊人的號碼
                 $data .= '&smbody=' . $prove_code . ' 為您的《AI靈感大師:澳洲3D光影觸動樂園》註冊驗證碼。';
                 // 設定curl網址
@@ -771,7 +773,7 @@ switch ($_POST['type']) {
                 $url .= 'CharsetURL=UTF-8';
                 // parameters
                 $data = 'username=90451526SMS';
-                $data .= '&no';
+                $data .= '&password=share';
                 $data .= '&dstaddr=' . $_POST['number']; // 收簡訊人的號碼 
                 $data .= '&smbody=' . $prove_code . ' 為您的《AI靈感大師:澳洲3D光影觸動樂園》註冊驗證碼。';
                 // 設定curl網址
@@ -811,7 +813,7 @@ switch ($_POST['type']) {
     case 'register':
         /* 註冊 */
         // 確認參數
-        if (empty(@$_POST['number']) or empty(@$_POST['email'])) {
+        if (empty(@$_POST['name']) or empty(@$_POST['number']) or empty(@$_POST['email'])) {
             $db->close();
             $json = ['result' => 'fail', 'message' => '缺少必要參數'];
             exit(json_encode($json));
@@ -865,7 +867,7 @@ switch ($_POST['type']) {
             };
         };
         // 確認姓名
-        if (@$_POST['name']) {
+        if ($_POST['name']) {
             if (mb_strlen($_POST['name']) < 2) {
                 $db->close();
                 $json = ['result' => 'fail', 'message' => '暱稱不得少於 2 個字'];

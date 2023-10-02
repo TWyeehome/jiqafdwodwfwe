@@ -43,7 +43,7 @@ const app = new Vue({
                         if (data.way == 'b') way = 'udn售票網';
                         if (data.way == 'c') way = 'Klook';
                         if (data.way == 'd') way = 'ibon售票系統';
-                        this.info = '購票渠道 - ' + way + '<br>' + data.created_at + ' 入場';
+                        this.info = '購票管道 - ' + way + '<br>' + data.created_at + ' 入場';
                         console.log(this.info);
                     })
                     .catch((response) => {

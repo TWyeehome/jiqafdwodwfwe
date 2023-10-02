@@ -1,5 +1,5 @@
 <?php
-function random_string($length = 32, $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
+function random_string($length = 32, $characters = '123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ')
 {
     if (!is_int($length) || $length < 0) {
         return false;
@@ -12,7 +12,7 @@ function random_string($length = 32, $characters = '0123456789abcdefghijklmnopqr
     return $string;
 };
 
-function random_number($length = 32, $characters = '0123456789')
+function random_number($length = 32, $characters = '123456789')
 {
     if (!is_int($length) || $length < 0) {
         return false;

@@ -13,6 +13,7 @@ $favicon = "./eslite.ico";
 ?>
 <?php require_once("./components/fonts.php"); ?>
 <title><?php echo $title; ?></title>
+<meta name="darkreader-lock">
 <meta name="description" content="<?php echo $title; ?>">
 <meta property="og:title" content="<?php echo $description; ?>">
 <meta property="og:description" content="<?php echo $description; ?>">

@@ -45,7 +45,7 @@
             display: block;
             text-align: center;
             font-size: 32px;
-            // font-family: "ClashGrotesk-Semibold";
+            font-family: "ClashGrotesk-Semibold";
             height: 35px;
             line-height: 110%;
             margin-bottom: 8px;
@@ -123,10 +123,10 @@
         left: 0;
         width: 366px;
         height: 243px;
-        border-radius: 6px;
         background-size: cover;
         background-position: center;
         background-color: transparent;
+        border-radius: 6px;
         overflow: hidden;
         @media (min-width: 1024px) {
             width: 474px;

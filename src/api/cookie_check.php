@@ -4,7 +4,6 @@ if (empty(@$_COOKIE['member_code'])) {
     exit(json_encode($json));
 };
 
-
 $result = $db->query("SELECT COUNT(*) AS member_cookie FROM attend WHERE member_code='" . $_COOKIE['member_code'] . "'");
 $row = mysqli_fetch_assoc($result);
 $member_cookie = $row['member_cookie'];

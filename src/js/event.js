@@ -486,13 +486,17 @@ const app = new Vue({
                             app.ticketName = data.content[index].ticket_code;
                             // console.log(response.data);
                             document.querySelector('.qr_box').innerHTML = '';
-                            QRCode(document.querySelector('.qr_box'), {
+                          
+                            new QRCode(document.querySelector('.qr_box'), {
                                 // member_id, ticket_id
                                 // location.href + 
                                 text: 't=' + data.content[index].ticket_code,
                                 width: '236',
                                 height: '236',
-                                correctLevel: QRCode.CorrectLevel.H
+                                colorDark: '#000000',
+                                colorLight: '#ffffff',
+                                padding: 30,
+                                correctLevel: QRCode.CorrectLevel.H,
                             });
                         };
 

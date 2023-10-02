@@ -19,14 +19,14 @@ switch (@$_POST['type']) {
             exit(json_encode($json));
         };
         // 檢查聯絡方式是否重複
-        $result = $db->query("SELECT COUNT(*) AS contact FROM convert_log WHERE contact='" . $_POST['contact'] . "'");
+        /*$result = $db->query("SELECT COUNT(*) AS contact FROM convert_log WHERE contact='" . $_POST['contact'] . "'");
         $row = mysqli_fetch_assoc($result);
         $contact = $row['contact'];
         if ($contact) {
             $db->close();
             $json = ['result' => 'fail', 'message' => '此聯絡方式已重複，請重新填寫'];
             exit(json_encode($json));
-        };
+        };*/
         // 新增
         $db->query("INSERT IGNORE INTO convert_log (way, contact, ip) 
         VALUES ('" . $_POST['way'] . "', '" . $_POST['contact'] . "', '" . $ip . "')");

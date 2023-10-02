@@ -1,31 +1,15 @@
 <?php
 header('Content-type:application/json; charset=utf-8');
-/* 串接 Mysql */
-require_once('php_connect_mysql.php');
-// 檢查是否登入過
-require_once('cookie_check.php');
 // 檢查 api 必填參數
 if (empty(@$_POST['type'])) {
     $json = ['result' => 'fail', 'message' => '缺少 type 參數'];
     exit(json_encode($json));
 };
-// 取 ip
-require_once('get_ip.php');
-// 產亂數
-require_once('random_code.php');
-// 取得今天日期
-function get_today()
-{
-    $today = getdate();
-    date("Y/m/d H:i");  //日期格式化
-    $year = $today["year"]; //年 
-    $month = $today["mon"]; //月
-    $day = $today["mday"];  //日
-    if (strlen($month) == '1') $month = '0' . $month;
-    if (strlen($day) == '1') $day = '0' . $day;
-    $today = $year . "-" . $month . "-" . $day;
-    return $today;
-};
+require_once('php_connect_mysql.php'); /* 串接 Mysql */
+require_once('cookie_check.php'); // 檢查是否登入過
+require_once('get_ip.php'); // 取 ip
+require_once('random_code.php'); // 產亂數
+require_once('get_today.php'); // 取得今天日期
 //
 switch (@$_POST['type']) {
     case 'issued_check': // 發行確認
@@ -53,6 +37,7 @@ switch (@$_POST['type']) {
     case 'pay_check': // 確認購買狀態
         // 檢查 api 必填參數
         if (empty(@$_POST['memberId'])) {
+            $db->close();
             $json = ['result' => 'fail', 'message' => '缺參數'];
             exit(json_encode($json));
         };
@@ -213,8 +198,8 @@ switch (@$_POST['type']) {
         /* 取得所有票 */
         // 檢查 API 參數
         if (empty(@$_POST['memberCode'])) {
-            $json = ['result' => 'fail', 'message' => '參數錯誤'];
             $db->close();
+            $json = ['result' => 'fail', 'message' => '參數錯誤'];
             exit(json_encode($json));
         };
         // 檢查會員
@@ -260,7 +245,9 @@ switch (@$_POST['type']) {
                 };
             };
         };
-        $ticket_total = $db->query("SELECT NULL FROM ticket WHERE user_id='" . $member_row['id'] . "' AND cancel!='" . 'true' . "'")->num_rows;
+        $result = $db->query("SELECT COUNT(*) AS ticket_total FROM ticket WHERE user_id='" . $member_row['id'] . "' AND cancel!='" . 'true' . "'");
+        $row = mysqli_fetch_assoc($result);
+        $ticket_total = $row['ticket_total'];
         // 已兌換
         $result = $db->query("SELECT COUNT(*) AS ticket_test_used FROM ticket WHERE ticket_type='" . 'ticket_test' . "' AND user_id='" . $member_row['id'] . "' AND used='" . 'true' . "' AND cancel!='" . 'true' . "'");
         $row = mysqli_fetch_assoc($result);

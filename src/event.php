@@ -52,7 +52,7 @@ if (empty(@$_COOKIE['member_code'])) {
                                 <span id="ticket_gift" class="qr_result qr_result-gift ms-2" data-gift="">贈品未兌換</span>
                             </div>
                             <!--<span class="qr_status" style="margin-bottom: 16px;">{{ dayOff }}</span>-->
-                            <div class="qr_box">
+                            <div class="qr_box" style="background-image: url(./img/white.jpg);">
                                 <a href="./index.php" class="d-block" style="color: #0D0D10;">購票去</a>
                             </div>
                             <article class="d-flex justify-content-center" style="margin: 16px auto 4px auto;">
