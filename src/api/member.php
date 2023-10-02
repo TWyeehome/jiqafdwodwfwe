@@ -884,7 +884,7 @@ switch ($_POST['type']) {
             // 確認會員
             $result = $db->query("SELECT * FROM attend WHERE email='" . $_POST['email'] . "' AND email_pass='" . 'true' . "'");
             // 會員不存在
-            if ($result->num_rows == 0) {
+            if (!$result->num_rows) {
                 $json = ['result' => 'fail', 'message' => '查無此信箱之會員'];
                 exit(json_encode($json));
             };
