@@ -1,17 +1,5 @@
 <?php
-if ($_SERVER['SERVER_NAME'] === 'localhost') {
-	// 測試機
-	$server = "localhost";
-	$user = "Michael";
-	$pw = "i28811540";
-	$db_name = "eslite";
-} else {
-	// azure
-	$server = "amping-prod.mysql.database.azure.com"; 
-	$user = "mokewptj";
-	$pw = "hDZg)2B2y-2oQ7";   
-	$db_name = "mokewptj_eslite";
-};
+
 
 $db = new mysqli($server, $user, $pw, $db_name);
 

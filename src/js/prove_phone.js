@@ -323,7 +323,8 @@ const app = new Vue({
             };
             // 檢查信箱
             function validateEmail(email) {
-                return /\S+@\S+\.\S+/.test(email);
+                /*var re = /\S+@\S+\.\S+/;
+                return re.test(email);*/
             };
             if (!validateEmail(this.email)) {
                 return this.sendDefault('請輸入有效信箱');

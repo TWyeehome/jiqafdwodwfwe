@@ -487,7 +487,7 @@ const app = new Vue({
                             // console.log(response.data);
                             document.querySelector('.qr_box').innerHTML = '';
                           
-                            new QRCode(document.querySelector('.qr_box'), {
+                            /*new QRCode(document.querySelector('.qr_box'), {
                                 // member_id, ticket_id
                                 // location.href + 
                                 text: 't=' + data.content[index].ticket_code,
@@ -497,7 +497,7 @@ const app = new Vue({
                                 colorLight: '#ffffff',
                                 padding: 30,
                                 correctLevel: QRCode.CorrectLevel.H,
-                            });
+                            });*/
                         };
 
                     } else {
